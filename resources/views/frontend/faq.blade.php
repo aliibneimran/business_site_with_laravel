@@ -6,7 +6,7 @@
 <main id="main">
 
   <!-- ======= Breadcrumbs ======= -->
-  <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{ asset('frontend/assets/img/contact-header.jpg') }}');">
+  <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{ asset('frontend/assets/img/faq-header.jpeg') }}');">
     <div class="container position-relative d-flex flex-column align-items-center">
 
       <h2>FAQ</h2>
