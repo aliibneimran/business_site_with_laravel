@@ -1,12 +1,17 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class, 'home']);
+Route::get('/about', [FrontendController::class, 'about']);
+Route::get('/service', [FrontendController::class, 'service']);
+Route::get('/gallery', [FrontendController::class, 'gallery']);
+Route::get('/blog', [FrontendController::class, 'blog']);
+Route::get('/faq', [FrontendController::class, 'faq']);
+Route::get('/contact', [FrontendController::class, 'contact']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
