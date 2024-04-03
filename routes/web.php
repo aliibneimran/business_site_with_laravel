@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -13,11 +14,17 @@ Route::get('/blog', [FrontendController::class, 'blog']);
 Route::get('/faq', [FrontendController::class, 'faq']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 
+
+Route::post('message', [ContactController::class, 'store'])->name('message_store');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/message', [ContactController::class, 'index'])->name('messages');
+
+
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

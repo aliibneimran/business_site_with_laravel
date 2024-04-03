@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Registration</title>
+  <title>Admin Registration</title>
   <!-- General CSS Files -->
   <link rel="stylesheet" href="backend/css/app.min.css">
   <link rel="stylesheet" href="backend/bundles/jquery-selectric/selectric.css">

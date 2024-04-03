@@ -7,8 +7,11 @@
     </div>
     <ul class="sidebar-menu">
       <li class="menu-header">Admin Dashboard</li>
-      <li class="dropdown active">
+      <li class="active">
         <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+      </li>
+      <li>
+        <a href="{{route('messages')}}" class="nav-link"><i data-feather="mail"></i><span>Message</span></a>
       </li>
       <li class="dropdown">
         <a href="#" class="menu-toggle nav-link has-dropdown"><i

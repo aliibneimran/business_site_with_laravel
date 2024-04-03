@@ -15,6 +15,10 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href='backend/img/favicon.ico' />
+
+   <!-- Datatable CSS -->
+   <link rel="stylesheet" href="{{asset('backend/bundles/datatables/datatables.min.css')}}">
+   <link rel="stylesheet" href="{{asset('backend/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
 </head>
 
 <body>
@@ -41,6 +45,17 @@
   <script src="{{asset('backend/js/scripts.js')}}"></script>
   <!-- Custom JS File -->
   <script src="{{asset('backend/js/custom.js')}}"></script>
+
+  <!-- For Datatable JS File -->
+  <script src="{{asset('backend/bundles/datatables/datatables.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/dataTables.buttons.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/buttons.flash.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/jszip.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/pdfmake.min.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/vfs_fonts.js')}}"></script>
+  <script src="{{asset('backend/bundles/datatables/export-tables/buttons.print.min.js')}}"></script>
+  <script src="{{asset('backend/js/page/datatables.js')}}"></script>
 </body>
 
 
