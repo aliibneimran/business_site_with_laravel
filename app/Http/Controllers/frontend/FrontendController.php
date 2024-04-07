@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
+use App\Models\Gallery;
+use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -13,11 +17,13 @@ class FrontendController extends Controller
     }
     public function about()
     {
-        return view('frontend.about');
+        $team = Team::all();
+        return view('frontend.about', compact('team'));
     }
     public function service()
     {
-        return view('frontend.service');
+        $services = Service::all();
+        return view('frontend.service', compact('services'));
     }
     public function contact()
     {
@@ -25,7 +31,8 @@ class FrontendController extends Controller
     }
     public function gallery()
     {
-        return view('frontend.gallery');
+        $glry = Gallery::all();
+        return view('frontend.gallery', compact('glry'));
     }
     public function blog()
     {
@@ -33,7 +40,8 @@ class FrontendController extends Controller
     }
     public function faq()
     {
-        return view('frontend.faq');
+        $faq = Faq::all();
+        return view('frontend.faq', compact('faq'));
     }
     
 }

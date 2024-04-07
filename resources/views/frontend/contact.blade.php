@@ -57,6 +57,13 @@
           <form action="{{route('message_store')}}" method="post" class="php-email-form">
             @csrf
             <div class="row">
+              <div class="my-3">
+                @if (session('success'))
+                  <div class="alert alert-success">
+                  {{ session('success') }}
+                  </div>
+                @endif
+              </div>
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control"  placeholder="Your Name" required>
               </div>
@@ -69,13 +76,6 @@
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              @if (session('success'))
-                <div class="alert alert-success">
-                {{ session('success') }}
-                </div>
-              @endif
             </div>
             <div class="text-center">
               <button type="submit" style="border-radius: 5px">Send Message</button>

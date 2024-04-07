@@ -22,32 +22,13 @@
   <section id="glry" class="glry section-bg">
     <div class="container">
       <div class="row">
+        @foreach ($glry as $item)
         <div class="col-md-3 col-sm-12 py-4">
-          <img src="frontend/assets/img/cards-1.jpg" alt="glry1" height="220" width="100%">
-          <a href="#" style="font-size: 1.3rem">This is image one</a> <br>
-          <small>category: example</small>
+          <img src="{{asset('')}}uploads/{{$item->img}}" alt="glry1" height="220" width="100%">
+          <a href="#" style="font-size: 1.3rem">{{$item->title}}</a> <br>
+          <small>category: {{$item->category}}</small>
         </div>
-        <div class="col-md-3 col-sm-12 py-4">
-          <img src="frontend/assets/img/cards-2.jpg" alt="glry1" height="220" width="100%">
-          <a href="#" style="font-size: 1.3rem">This is image two</a> <br>
-          <small>category: example</small>
-        </div>
-        <div class="col-md-3 col-sm-12 py-4">
-          <img src="frontend/assets/img/cards-3.jpg" alt="glry1" height="220" width="100%">
-          <a href="#" style="font-size: 1.3rem">This is image three</a> <br>
-          <small>category: example</small>
-        </div>
-        <div class="col-md-3 col-sm-12 py-4">
-          <img src="frontend/assets/img/cards-4.jpg" alt="glry1" height="220" width="100%">
-          <a href="#" style="font-size: 1.3rem">This is image four</a> <br>
-          <small>category: example</small>
-        </div>
-        <div class="col-md-3 col-sm-12 py-4">
-          <img src="frontend/assets/img/cards-4.jpg" alt="glry1" height="220" width="100%">
-          <a href="#" style="font-size: 1.3rem">This is image five</a> <br>
-          <small>category: example</small>
-        </div>
-
+        @endforeach        
       </div>
     </div>
   </section><!-- End Frequently Asked Questions Section -->
