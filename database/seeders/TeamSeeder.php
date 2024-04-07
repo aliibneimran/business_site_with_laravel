@@ -18,7 +18,7 @@ class TeamSeeder extends Seeder
             'designation'=> 'Chief Executive Officer',
             'img'=> 'team-1.jpg',
             'twitter'=>'https://twitter.com/',
-            'facebook'=>'www.facebook.com/hasnain.sadid',
+            'facebook'=>'https://www.facebook.com/hasnain.sadid',
             'instagram'=>'https://www.instagram.com/_sadid_rafi/',
             'linkedin'=>'https://www.linkedin.com/in/hasnainsadid/',
         ]);

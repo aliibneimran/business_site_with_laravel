@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(GallerySeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(BlogSeeder::class);
     }
 }

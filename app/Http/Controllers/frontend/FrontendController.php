@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Gallery;
 use App\Models\Service;
@@ -13,7 +14,8 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $blog = Blog::all();
+        return view('frontend.home', compact('blog'));
     }
     public function about()
     {
@@ -36,7 +38,8 @@ class FrontendController extends Controller
     }
     public function blog()
     {
-        return view('frontend.blog');
+        $blog = Blog::all();
+        return view('frontend.blog', compact('blog'));
     }
     public function faq()
     {
