@@ -15,22 +15,22 @@ class GallerySeeder extends Seeder
     {
         DB::table('gallery')->insert([
             'title'=>'This is image one',
-            'category'=>'example one',
+            'category_id'=>1,
             'img'=>'cards-1.jpg'
         ]);
         DB::table('gallery')->insert([
             'title'=>'This is image two',
-            'category'=>'example two',
+            'category_id'=>2,
             'img'=>'cards-2.jpg'
         ]);
         DB::table('gallery')->insert([
             'title'=>'This is image three',
-            'category'=>'example three',
+            'category_id'=>3,
             'img'=>'cards-3.jpg'
         ]);
         DB::table('gallery')->insert([
             'title'=>'This is image four',
-            'category'=>'example four',
+            'category_id'=>4,
             'img'=>'cards-4.jpg'
         ]);
     }

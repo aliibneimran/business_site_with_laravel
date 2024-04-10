@@ -22,7 +22,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.faq.create');
     }
 
     /**
@@ -30,7 +30,8 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Faq::create($request->all());
+        return back()->with('msg', 'FAQ added successfully');
     }
 
     /**
@@ -46,7 +47,8 @@ class FaqController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $faq = Faq::find($id);
+        return view('backend.faq.edit', compact('faq'));
     }
 
     /**
@@ -54,7 +56,9 @@ class FaqController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $faq = Faq::find($id);
+        $faq->update($request->all());
+        return back()->with('msg', 'Updated Successfully');
     }
 
     /**
@@ -62,6 +66,8 @@ class FaqController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $faq = Faq::find($id);
+        $faq->delete();
+        return back()->with('msg', 'Deleted Successfully');
     }
 }

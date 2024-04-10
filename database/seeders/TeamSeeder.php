@@ -21,6 +21,7 @@ class TeamSeeder extends Seeder
             'facebook'=>'https://www.facebook.com/hasnain.sadid',
             'instagram'=>'https://www.instagram.com/_sadid_rafi/',
             'linkedin'=>'https://www.linkedin.com/in/hasnainsadid/',
+            'status'=>1,
         ]);
         DB::table('team')->insert([
             'name'=> 'Sarah Jhonson',
@@ -30,6 +31,7 @@ class TeamSeeder extends Seeder
             'facebook'=>'www.facebook.com/mamunr.rashid.357',
             'instagram'=>'https://www.instagram.com/_sadid_rafi/',
             'linkedin'=>'https://www.linkedin.com/in/hasnainsadid/',
+            'status'=>1,
         ]);
         DB::table('team')->insert([
             'name'=> 'William Anderson',
@@ -39,6 +41,7 @@ class TeamSeeder extends Seeder
             'facebook'=>'https://www.facebook.com/profile.php?id=100007773072162',
             'instagram'=>'https://www.instagram.com/_sadid_rafi/',
             'linkedin'=>'https://www.linkedin.com/in/hasnainsadid/',
+            'status'=>1,
         ]);
         DB::table('team')->insert([
             'name'=> 'Amanda Jepson',
@@ -48,6 +51,7 @@ class TeamSeeder extends Seeder
             'facebook'=>'www.facebook.com/',
             'instagram'=>'https://www.instagram.com/',
             'linkedin'=>'https://www.linkedin.com/',
+            'status'=>1,
         ]);
     }
 }

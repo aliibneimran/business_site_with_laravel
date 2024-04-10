@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\backend\TeamController;
 use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -35,7 +36,7 @@ Route::get('/contact', [FrontendController::class, 'contact']);
                       Backend starts
 ====================####################====================
 */    
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/message', [ContactController::class, 'index'])->name('messages');
         Route::post('message', [ContactController::class, 'store'])->name('message_store');
 
@@ -50,9 +51,11 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 
         Route::resource('blog', BlogController::class);
 
+        Route::resource('gallery', GalleryController::class);
+
         Route::resource('category', CategoryController::class);
 
-        Route::resource('gallery', GalleryController::class);
+        Route::resource('team', TeamController::class);
 
         Route::resource('faq', FaqController::class);
     });

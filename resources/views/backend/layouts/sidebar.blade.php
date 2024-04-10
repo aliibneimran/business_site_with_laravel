@@ -9,7 +9,7 @@
       <li class="menu-header">Admin Dashboard</li>
       {{-- Dashboard --}}
       <li class="">
-        <a href="{{url('dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+        <a href="{{route('dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
       </li>
 
       {{-- Services --}}
@@ -30,6 +30,11 @@
         </ul>
       </li>
 
+      {{-- Gallery --}}
+      <li class="dropdown">
+        <a href="#" class="nav-link"><i class="fa fa-image" aria-hidden="true"></i><span>Gallery</span></a>
+      </li>
+
       {{-- Category --}}
       <li class="dropdown">
         <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fa fa-list" aria-hidden="true"></i><span>Category</span></a>
@@ -39,9 +44,13 @@
         </ul>
       </li>
 
-      {{-- Gallery --}}
+      {{-- Team --}}
       <li class="dropdown">
-        <a href="#" class="nav-link"><i class="fa fa-image" aria-hidden="true"></i><span>Gallery</span></a>
+        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-users" aria-hidden="true"></i><span>Team</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{route('team.index')}}">All Members</a></li>
+          <li><a class="nav-link" href="{{route('team.create')}}">Add Team Member</a></li>
+        </ul>
       </li>
 
       {{-- FAQ --}}

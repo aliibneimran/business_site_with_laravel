@@ -7,8 +7,16 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
+              @if (session('msg'))
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{session('msg')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
               <div class="card-header">
-                <h4>Export Table</h4>
+                <h4>All FAQ</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -28,8 +36,13 @@
                         <td>{{$item->question}}</td>
                         <td>{{$item->answer}}</td>
                         <td style="width: 100px;">
-                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-pen"></i></a>
-                            <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                            <a href="{{route('faq.edit', $item->id)}}" class="btn btn-success btn-sm"><i class="fas fa-pen"></i></a>
+                            
+                            <form action="{{route('faq.destroy', $item->id)}}" method="POST" class="d-inline">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Are You sure to delete?')" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                         </td>
                       </tr>
                     @endforeach

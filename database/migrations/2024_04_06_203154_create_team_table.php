@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('team', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('designation');
+            $table->string('designation', 100);
             $table->string('img');
             $table->string('twitter');
             $table->string('facebook');
             $table->string('instagram');
             $table->string('linkedin');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }
