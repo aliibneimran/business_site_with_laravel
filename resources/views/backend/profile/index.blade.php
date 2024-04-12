@@ -28,7 +28,6 @@
                   <input type="text" name="status" class="form-control form-control-border" id="exampleInputPassword1" value="Active" readonly>
                 </div>  
                 <a href="{{route('profile.edit', Auth::user()->id)}}" class="btn btn-success btn-sm mb-4"><i class="fas fa-pen"></i> Edit Profile</a>
-                <a href="{{route('profile.create')}}">add new</a>
               </div>
             </form>
           </div>
