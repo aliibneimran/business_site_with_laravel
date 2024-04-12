@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title','Edit Gallery')
+@section('title','Edit Profile')
 @section('content')
 <div class="main-content">
     <section class="section">
@@ -15,33 +15,30 @@
                 </button>
               </div>
               @endif
-              <form action="{{route('gallery.update', $glry->id)}}" method="post" enctype="multipart/form-data">
+              <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
+                {{-- @method('PUT') --}}
                 <div class="card-header">
-                  <h4>Edit Gallery</h4>
+                  <h4>Edit Profile</h4>
                 </div>
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" name="title" value="{{old('title', $glry->title)}}">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name">
                   </div>
 
                   <div class="form-group">
-                    <label>Category</label>
-                    <select name="category_id" class="form-control">
-                      <option disabled>Select Category</option>
-                      @foreach ($cats as $item)
-                          <option value="{{$item->id}}" @selected($item->id)>{{$item->title}}</option>
-                      @endforeach
-                    </select>
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email">
                   </div>
 
                   <div class="form-group">
-                    <label>Image</label>
-                    <input type="file" class="form-control" name="img" value="{{old('img', $glry->img)}}">
+                    <label>Profile Picture</label>
+                    <input type="file" class="form-control" name="img">
                   </div>
-                  
+
+                  {{-- <a href="#" class="btn btn-outline-primary">Change Password</a> --}}
+
                 </div>
                 <div class="card-footer text-left">
                   <button class="btn btn-primary ml-1" type="submit">Submit</button>

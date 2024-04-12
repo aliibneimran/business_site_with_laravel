@@ -38,7 +38,7 @@
                     @foreach ($team as $key=>$item)
                       <tr>
                         <td>{{++$key}}</td>
-                        <td><img src="uploads/{{$item->img}}" alt="image" height="70"></td>
+                        <td><img src="{{asset('')}}uploads/{{$item->img}}" alt="image" height="70"></td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->designation}}</td>
                         <td><a target="_blank" href="{{$item->twitter}}">{{$item->twitter}}</a></td>

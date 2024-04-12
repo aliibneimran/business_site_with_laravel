@@ -26,12 +26,17 @@
                     @foreach ($services as $key=>$item)
                       <tr>
                         <td>{{++$key}}</td>
-                        <td><img src="uploads/{{$item->img}}" alt="image" height="70"></td>
+                        <td><img src="{{asset('')}}uploads/{{$item->img}}" alt="image" height="70"></td>
                         <td>{{$item->title}}</td>
                         <td>{{$item->description}}</td>
                         <td style="width: 100px">
-                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-pen"></i></a>
-                            <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                            <a href="{{route('service.edit', $item->id)}}" class="btn btn-success btn-sm"><i class="fas fa-pen"></i></a>
+                            
+                            <form class="d-inline" action="{{route('service.destroy', $item->id)}}" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button onclick="return confirm('Are you sure to delete?')" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                         </td>
                       </tr>
                     @endforeach

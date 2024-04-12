@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\AdminProfileController;
 use App\Http\Controllers\backend\BlogController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\ServiceController;
@@ -26,7 +27,7 @@ Route::get('/faq', [FrontendController::class, 'faq']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 /* 
 ====================####################====================
-                      Frontend starts
+                      Frontend ends
 ====================####################====================
 */
 
@@ -45,7 +46,9 @@ Route::get('/contact', [FrontendController::class, 'contact']);
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-        Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::resource('profile', AdminProfileController::class);
 
         Route::resource('service', ServiceController::class);
 
@@ -59,5 +62,11 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 
         Route::resource('faq', FaqController::class);
     });
+
+/* 
+====================####################====================
+                      Backend starts
+====================####################====================
+*/ 
 
 require __DIR__.'/auth.php';

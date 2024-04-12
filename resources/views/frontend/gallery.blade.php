@@ -26,7 +26,7 @@
         <div class="col-md-3 col-sm-12 py-4">
           <img src="{{asset('')}}uploads/{{$item->img}}" alt="glry1" height="220" width="100%">
           <a href="#" style="font-size: 1.3rem">{{$item->title}}</a> <br>
-          <small>category: {{$item->category}}</small>
+          <small>category: {{$item->category->title}}</small>
         </div>
         @endforeach        
       </div>

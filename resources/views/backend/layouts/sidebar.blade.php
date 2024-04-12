@@ -32,7 +32,11 @@
 
       {{-- Gallery --}}
       <li class="dropdown">
-        <a href="#" class="nav-link"><i class="fa fa-image" aria-hidden="true"></i><span>Gallery</span></a>
+        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fa fa-list" aria-hidden="true"></i><span>Gallery</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{route('gallery.index')}}">All Gallery</a></li>
+          <li><a class="nav-link" href="{{route('gallery.create')}}">Add Gallery</a></li>
+        </ul>
       </li>
 
       {{-- Category --}}

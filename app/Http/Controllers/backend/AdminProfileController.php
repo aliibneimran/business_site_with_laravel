@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Gallery;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class GalleryController extends Controller
+class AdminProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $glry = Gallery::all();
-        return view('backend.gallery.index', compact('glry'));
+        $admin = Auth::user();
+        return view('backend.profile.index', compact('admin'));
     }
 
     /**
@@ -23,8 +23,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $cats = Category::all();
-        return view('backend.gallery.create', compact('cats'));
+        return view('backend.profile.create');
     }
 
     /**
@@ -32,14 +31,14 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        $filename = time(). '.' . $request->img->extension();
+        $filename = time() . '.' . $request->img->extension();
         $data = $request->all();
         $data['img'] = $filename;
-        
-        if (Gallery::create($data)) {
+
+        if (User::create($data)) {
             $request->img->move('uploads', $filename);
-            return back()->with('msg', 'Gallery added successfully');
-        };
+            return back();
+        }
     }
 
     /**
@@ -55,9 +54,8 @@ class GalleryController extends Controller
      */
     public function edit(string $id)
     {
-        $glry = Gallery::find($id);
-        $cats = Category::all();
-        return view('backend.gallery.edit', compact('glry', 'cats'));
+        $profile = User::find(Auth::id());
+        return view('backend.profile.edit', compact('profile'));
     }
 
     /**
@@ -65,7 +63,7 @@ class GalleryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $glry = Gallery::find($id);
+        $admin = User::find($id);
         $data = $request->all();
 
         if ($request->hasFile('img')) {
@@ -73,9 +71,9 @@ class GalleryController extends Controller
             $data['img'] = $filename;
             $request->img->move('uploads', $filename);
         }
-
-        if ($glry->update($data)) {
-            return back()->with('msg', 'Updated Successfully');
+        // dd($data);
+        if ($admin->update($data)) {
+            return back()->with('msg', 'Successfully Updated');
         }
     }
 
@@ -84,9 +82,6 @@ class GalleryController extends Controller
      */
     public function destroy(string $id)
     {
-        
-        $glry = Gallery::find($id);
-        $glry->delete();
-        return back()->with('Deleted Successfully');
+        //
     }
 }

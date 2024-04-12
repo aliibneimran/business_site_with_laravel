@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -22,7 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.blog.create');
     }
 
     /**
@@ -30,7 +31,17 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $filename = time(). '.' . $request->img->extension();
+        $data = $request->all();
+        $data['img'] = $filename;
+        $data['date'] = NOW();
+        $data['author'] = Auth::user()->name;
+
+        // dd($data);
+        if (Blog::create($data)) {
+            $request->img->move('uploads', $filename);
+            return back()->with('msg', 'Blog Added Successfully');
+        }
     }
 
     /**
@@ -38,7 +49,8 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('frontend.blog_details', compact('blog'));
     }
 
     /**
@@ -46,7 +58,8 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('backend.blog.edit', compact('blog'));
     }
 
     /**
@@ -54,7 +67,16 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $blog = Blog::find($id);
+        $data = $request->all();
+        if ($request->hasFile('img')) {
+            $filename = time(). '.' . $request->img->extension();
+            $data['img'] = $filename;
+            $request->img->move('uploads', $filename);
+        }
+        if ($blog->update($data)) {
+            return back()->with('msg', 'Updated Successfully');
+        }
     }
 
     /**
@@ -62,6 +84,8 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+        return back()->with('msg', 'Deleted Successfully');
     }
 }

@@ -22,7 +22,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.service.create');
     }
 
     /**
@@ -30,7 +30,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $filename = time(). '.' . $request->img->extension();
+        $data = $request->all();
+        $data['img'] = $filename;
+        if (Service::create($data)) {
+            $request->img->move('uploads', $filename);
+            return back()->with('msg', 'Service added successfully');
+        };
     }
 
     /**
@@ -46,7 +52,8 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $service = Service::find($id);
+        return view('backend.service.edit', compact('service'));
     }
 
     /**
@@ -54,7 +61,17 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $service = Service::find($id);
+        $data = $request->all();
+
+        if ($request->hasFile('img')) {
+            $filename = time(). '.' . $request->img->extension();
+            $data['img'] = $filename;
+            $request->img->move('uploads', $filename);
+        }
+        if ($service->update($data)) {
+            return back()->with('msg', 'Updated Successfully');
+        }
     }
 
     /**
@@ -62,6 +79,8 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $service = Service::find($id);
+        $service->delete();
+        return back()->with('msg', 'Deleted Successfully');
     }
 }

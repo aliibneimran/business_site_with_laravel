@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{asset('backend/css/components.css')}}">
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
-  <link rel='shortcut icon' type='image/x-icon' href='backend/img/favicon.ico' />
+  <link rel='shortcut icon' type='image/x-icon' href='{{asset('')}}backend/img/favicon.ico' />
 
    <!-- Datatable CSS -->
    <link rel="stylesheet" href="{{asset('backend/bundles/datatables/datatables.min.css')}}">
