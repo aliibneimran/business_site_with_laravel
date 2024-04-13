@@ -1,6 +1,6 @@
 <footer class="main-footer">
   <div class="footer-left">
-    <a href="templateshub.net">Templateshub</a></a>
+    &copy; <strong>Business Website</strong>. All Rights Reserved
   </div>
   <div class="footer-right">
   </div>
