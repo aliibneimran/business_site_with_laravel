@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function index()
     {
         $messages = Contact::get();
-        return view('backend.message',compact('messages'));
+        return view('backend.messages.index',compact('messages'));
     }
 
     public function store(Request $request)
@@ -35,5 +35,10 @@ class ContactController extends Controller
             ]);        
         }
         return redirect()->back()->with('success', 'Message sent successfully!');
+    }
+    public function show($id)
+    {
+        $single = Contact::find($id);
+        return view('backend.messages.single',compact('single'));
     }
 }

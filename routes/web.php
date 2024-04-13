@@ -16,6 +16,7 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 
 
 Route::post('message', [ContactController::class, 'store'])->name('message_store');
+Route::get('message/{id}', [ContactController::class, 'show'])->name('single_message');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
