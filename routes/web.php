@@ -32,20 +32,6 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 */
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Route::post('message', [ContactController::class, 'store'])->name('message_store');
-Route::get('message/{id}', [ContactController::class, 'show'])->name('single_message');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/message', [ContactController::class, 'index'])->name('messages');
-=======
-=======
->>>>>>> 21b51d01f8504fa6077225dee40b49a090c54a38
 /* 
 ====================####################====================
                       Backend starts
@@ -54,10 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/message', [ContactController::class, 'index'])->name('messages');
         Route::post('message', [ContactController::class, 'store'])->name('message_store');
-<<<<<<< HEAD
->>>>>>> 21b51d01f8504fa6077225dee40b49a090c54a38
-=======
->>>>>>> 21b51d01f8504fa6077225dee40b49a090c54a38
+        Route::get('message/{id}', [ContactController::class, 'show'])->name('single_message');
 
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
