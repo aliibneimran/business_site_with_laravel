@@ -48,14 +48,14 @@
                   </ul>
                 </div>
 
-                <div class="content">
+                <div class="content px-3">
                   <p>
-                    {{$item->desc}}
+                    {{substr($item->desc, 0, 250).'...'}}
                   </p>
                 </div>
 
                 <div class="read-more mt-auto align-self-end">
-                  <a href="{{route('blog.show', $item->id)}}">Read More <i class="bi bi-arrow-right"></i></a>
+                  <a class="me-4" href="{{route('blog.show', $item->id)}}">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>

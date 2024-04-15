@@ -66,7 +66,7 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 
 /* 
 ====================####################====================
-                      Backend starts
+                      Backend end
 ====================####################====================
 */ 
 
