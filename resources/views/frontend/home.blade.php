@@ -276,8 +276,8 @@
                 <span class="post-author">{{$item->author}}</span>
               </div>
               <h3 class="post-title">{{$item->title}}</h3>
-              <p>{{$item->desc}}</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <p>{{substr($item->desc,0,150). '...'}}</p>
+              <a href="{{route('blog.details', $item->id)}}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           @endforeach

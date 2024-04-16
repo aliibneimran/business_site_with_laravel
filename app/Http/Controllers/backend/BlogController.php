@@ -49,8 +49,8 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        $blog = Blog::find($id);
-        return view('frontend.blog_details', compact('blog'));
+        // $blog = Blog::find($id);
+        // return view('frontend.blog_details', compact('blog'));
     }
 
     /**

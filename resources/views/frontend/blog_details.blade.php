@@ -28,19 +28,19 @@
 
           <article class="blog-details">
 
-            <div class="post-img">
-              <img src="{{asset('')}}uploads/{{$blog->img}}" width="100%" alt="Blog_img" class="img-fluid">
-            </div>
+            
 
             <h2 class="title">{{$blog->title}}</h2>
 
-            <div class="meta-top">
+            <div class="meta-top mb-5">
               <ul>
                 <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{$blog->author}}</a></li>
                 <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="{{Carbon\Carbon::parse($blog->date)->format('M d, Y')}}">{{Carbon\Carbon::parse($blog->date)->format('M d, Y')}}</time></a></li>
               </ul>
             </div><!-- End meta top -->
-
+            <div class="post-img">
+              <img src="{{asset('')}}uploads/{{$blog->img}}" width="60%" height="70%" alt="Blog_img" class="img-fluid m-auto d-block">
+            </div>
             <div class="content">
               <p>
                 {{$blog->desc}}

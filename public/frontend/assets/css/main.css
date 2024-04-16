@@ -1552,8 +1552,8 @@ section {
 # Blog Details Page
 --------------------------------------------------------------*/
 .blog .blog-details {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
+  padding: 10px 30px;
 }
 
 .blog .blog-details .post-img {

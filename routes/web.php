@@ -23,6 +23,7 @@ Route::get('/about', [FrontendController::class, 'about']);
 Route::get('/service', [FrontendController::class, 'service']);
 Route::get('/gallery', [FrontendController::class, 'gallery']);
 Route::get('/blog', [FrontendController::class, 'blog']);
+Route::get('/blog/details/{id}', [FrontendController::class, 'blog_details'])->name('blog.details');
 Route::get('/faq', [FrontendController::class, 'faq']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 /* 

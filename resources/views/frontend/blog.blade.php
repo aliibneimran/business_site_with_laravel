@@ -37,7 +37,7 @@
                 </div>
 
                 <h2 class="title">
-                  <a href="{{route('blog.show', $item->id)}}">{{$item->title}}</a>
+                  <a href="{{route('blog.details', $item->id)}}">{{$item->title}}</a>
                 </h2>
 
                 <div class="meta-top">
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="read-more mt-auto align-self-end">
-                  <a class="me-4" href="{{route('blog.show', $item->id)}}">Read More <i class="bi bi-arrow-right"></i></a>
+                  <a class="me-4" href="{{route('blog.details', $item->id)}}">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>

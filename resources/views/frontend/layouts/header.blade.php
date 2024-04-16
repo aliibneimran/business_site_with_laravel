@@ -13,13 +13,13 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="{{url('/')}}" class="active">Home</a></li>
-        <li><a href="{{url('/about')}}">About</a></li>
-        <li><a href="{{url('/service')}}">Services</a></li>
-        <li><a href="{{url('/gallery')}}">Album Gallery</a></li>
-        <li><a href="{{url('/blog')}}">Blog</a></li>
-        <li><a href="{{url('/faq')}}">FAQ</a></li>
-        <li><a href="{{url('/contact')}}">Contact</a></li>
+        <li><a href="{{url('/')}}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{url('/about')}}" class="{{ request()->is('about') ? 'active' : '' }}">About</a></li>
+        <li><a href="{{url('/service')}}" class="{{ request()->is('service') ? 'active' : '' }}">Services</a></li>
+        <li><a href="{{url('/gallery')}}" class="{{ request()->is('gallery') ? 'active' : '' }}">Album Gallery</a></li>
+        <li><a href="{{url('/blog')}}" class="{{ request()->is('blog') ? 'active' : '' }}">Blog</a></li>
+        <li><a href="{{url('/faq')}}" class="{{ request()->is('faq') ? 'active' : '' }}">FAQ</a></li>
+        <li><a href="{{url('/contact')}}" class="{{ request()->is('contact') ? 'active' : '' }}">Contact</a></li>
       </ul>
     </nav><!-- .navbar -->
 

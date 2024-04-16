@@ -41,6 +41,11 @@ class FrontendController extends Controller
         $blog = Blog::all();
         return view('frontend.blog', compact('blog'));
     }
+    public function blog_details($id)
+    {
+        $blog = Blog::find($id);
+        return view('frontend.blog_details', compact('blog'));
+    }
     public function faq()
     {
         $faq = Faq::all();
