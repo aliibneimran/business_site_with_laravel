@@ -26,6 +26,7 @@ Route::get('/blog', [FrontendController::class, 'blog']);
 Route::get('/blog/details/{id}', [FrontendController::class, 'blog_details'])->name('blog.details');
 Route::get('/faq', [FrontendController::class, 'faq']);
 Route::get('/contact', [FrontendController::class, 'contact']);
+Route::post('message', [ContactController::class, 'store'])->name('message_store');
 /* 
 ====================####################====================
                       Frontend ends
@@ -40,7 +41,6 @@ Route::get('/contact', [FrontendController::class, 'contact']);
 */    
     Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/message', [ContactController::class, 'index'])->name('messages');
-        Route::post('message', [ContactController::class, 'store'])->name('message_store');
         Route::get('message/{id}', [ContactController::class, 'show'])->name('single_message');
 
 

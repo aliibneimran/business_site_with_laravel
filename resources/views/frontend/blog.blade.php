@@ -63,6 +63,9 @@
             @endforeach
 
           </div><!-- End blog posts list -->
+          <div class="mt-4">
+            {{$blog->links('pagination::bootstrap-5')}}
+          </div>
 
         </div>
 

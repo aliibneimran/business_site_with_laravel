@@ -14,7 +14,7 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $blog = Blog::all();
+        $blog = Blog::orderBy('created_at', 'desc')->take(4)->get();
         return view('frontend.home', compact('blog'));
     }
     public function about()
@@ -24,7 +24,7 @@ class FrontendController extends Controller
     }
     public function service()
     {
-        $services = Service::all();
+        $services = Service::orderBy('id', 'desc')->get();
         return view('frontend.service', compact('services'));
     }
     public function contact()
@@ -33,12 +33,12 @@ class FrontendController extends Controller
     }
     public function gallery()
     {
-        $glry = Gallery::all();
+        $glry = Gallery::orderBy('id','desc')->get();
         return view('frontend.gallery', compact('glry'));
     }
     public function blog()
     {
-        $blog = Blog::all();
+        $blog = Blog::orderBy('id', 'desc')->paginate('4');
         return view('frontend.blog', compact('blog'));
     }
     public function blog_details($id)

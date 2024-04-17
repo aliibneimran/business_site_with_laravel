@@ -116,32 +116,38 @@
 
       </div>
 
-      <div class="row gy-4">
+      <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
 
-        @foreach ($team as $item)
-        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="team-member">
-            <div class="member-img">
-              <img src="{{asset('')}}uploads/{{$item->img}}" class="img-fluid" alt="">
-              <div class="social">
-                <a href="{{$item->twitter}}"><i class="bi bi-twitter"></i></a>
-                <a href="{{$item->facebook}}" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="{{$item->instagram}}" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="{{$item->linkedin}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+          @foreach ($team as $item)
+          <div class="swiper-slide">
+            <div class="testimonial-item m-4 pb-5">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{{asset('')}}uploads/{{$item->img}}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href="{{$item->twitter}}"><i class="bi bi-twitter"></i></a>
+                    <a href="{{$item->facebook}}" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="{{$item->instagram}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="{{$item->linkedin}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>{{$item->name}}</h4>
+                  <span>{{$item->designation}}</span>
+                </div>
               </div>
             </div>
-            <div class="member-info">
-              <h4>{{$item->name}}</h4>
-              <span>{{$item->designation}}</span>
-            </div>
           </div>
-        </div>
-        @endforeach        
+          @endforeach
 
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
 
     </div>
-  </section><!-- End Team Section -->
+  </section>
+  <!-- End Team Section -->
 
 </main>
 @endsection

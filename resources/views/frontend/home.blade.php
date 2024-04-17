@@ -281,7 +281,11 @@
             </div>
           </div>
           @endforeach
-
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+              <a href="{{ url('blog') }}" class="btn btn-primary w-25 mt-5">All Blogs</a>
+          </div>
         </div>
 
       </div>
